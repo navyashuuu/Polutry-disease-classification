@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PoultryDetect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-color: #000;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+        header {
+            background-color: #111;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 8px 16px;
+            background-color: #333;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        section {
+            padding: 50px 20px;
+        }
+        .main {
+            text-align: center;
+        }
+        .btn {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: lightgreen;
+        }
+        .content {
+            max-width: 800px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .contact-form {
+            margin-top: 20px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        .contact-form input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+        }
+        .contact-form input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-form input[type="submit"]:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PoultryDetect</h1>
+        <nav>
+            <a href="#home">🏠 Home</a>
+            <a href="#about">📖 About</a>
+            <a href="#contact">📞 Contact</a>
+        </nav>
+    </header>
+
+    <section id="home" class="main">
+        <h2 class="section-title">Welcome to Poultry Health Hub</h2>
+        <p class="content">
+            Your comprehensive resource for poultry disease management and prevention. Using AI-based image classification, we help farmers and poultry professionals detect diseases like Coccidiosis, Newcastle Disease, and more with ease and accuracy.
+        </p>
+        <a href="/predict" class="btn">🚀 Get Started</a>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">📖 About</h2>
+        <p class="content">
+            PoultryDetect is an AI-powered tool developed to assist in early detection of poultry diseases. It uses deep learning and transfer learning (MobileNetV2) to classify images of infected and healthy chickens. This enables quicker intervention, better flock health, and improved productivity.
+        </p>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">📞 Contact</h2>
+        <p class="content">
+            Please enter your mobile number below so our team can get in touch with you for support or feedback.
+        </p>
+
+        <form class="contact-form" method="POST" action="/submit_contact">
+            <input type="text" name="mobile" placeholder="Enter your mobile number" required>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+</body>
+</html>
